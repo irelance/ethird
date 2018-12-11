@@ -1,0 +1,25 @@
+{
+  "name": "ethird",
+  "version": "1.0.0",
+  "description": "A third tool for egret third party package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/irelance/ethird.git"
+  },
+  "keywords": [
+    "egret",
+    "third-party"
+  ],
+  "author": "irelance",
+  "license": "MIT",
+  "bin": {
+    "ethird": "./bin/ethird.js"
+  },
+  "dependencies": {
+    "commander": "^2.19.0"
+  }
+}
