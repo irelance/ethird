@@ -152,6 +152,7 @@ program.command('build')
     .description('build Egret project')
     .action(function () {
         childProcess.execSync('webpack');
+        childProcess.execSync('egret build typings');
         childProcess.execSync('egret build');
     });
 

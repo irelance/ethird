@@ -38,13 +38,26 @@ ethird install jquery
 # npm install jquery
 # typings install dt~jquery --global --save
 ```
-## 4.3.build your project
+
+## 4.4.add your require
+find typing.js on your egret root
+and add the package you want to use
+
+example:
+```js
+jQuery=require('jquery');
+//expose jQuery as global value
+//I use jQuery as variable name because the typings export the name
+```
+
+## 4.5.build your project
 ```bash
 ethird build
 ```
 or
 ```bash
 webpack
+egret build typings
 egret build
 ```
 
