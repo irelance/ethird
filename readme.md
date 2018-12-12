@@ -6,12 +6,46 @@ This package is means to auto manage egret third party library
 npm i -g ethird
 ```
 
-# 3. Create a project
+# 3. Create a third party project
 ```bash
-ethird package-name -e egret-compile-version
+ethird create package-name -e egret-compile-version
 ```
 example:
 ```bash
-ethird ngraph -e 5.2.13
+ethird create ngraph -e 5.2.13
 ```
 This will create the framework which describe in [my tutorial](https://github.com/irelance/egret-ngraph)
+
+# 4. Init a Egret project with typings support
+## 4.1.
+```bash
+# install typings first time
+npm i -g typings
+```
+
+## 4.2.
+```bash
+ethird init
+```
+## 4.3.add dts and node_modules
+```bash
+ethird install package-name
+```
+example:
+```bash
+ethird install jquery
+# will run
+# npm install jquery
+# typings install dt~jquery --global --save
+```
+## 4.3.build your project
+```bash
+ethird build
+```
+or
+```bash
+webpack
+egret build
+```
+
+
