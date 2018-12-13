@@ -1,6 +1,6 @@
 {
   "name": "ethird",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A third tool for egret third party package",
   "main": "index.js",
   "scripts": {

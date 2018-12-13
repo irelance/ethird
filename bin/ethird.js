@@ -34,7 +34,7 @@ function mkdir(path, option) {
 }
 
 function exec(command, options) {
-    childProcess.spawn(command, options, {stdio: 'inherit'})
+    childProcess.spawnSync(command, options, {stdio: 'inherit'})
 }
 
 function buildEgretThirdPackage(basePath, packageName) {
