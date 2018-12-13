@@ -1,6 +1,6 @@
 {
   "name": "ethird",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A third tool for egret third party package",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "colors": "^1.3.3",
-    "commander": "^2.19.0"
+    "commander": "^2.19.0",
+    "cross-spawn": "^6.0.5"
   }
 }

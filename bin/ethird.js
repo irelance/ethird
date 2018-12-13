@@ -2,7 +2,7 @@
 const fs = require('fs');
 const program = require('commander');
 const colors = require('colors');
-const childProcess = require('child_process');
+const spawn = require('cross-spawn');
 
 let typingsPackageName = 'typings';
 
@@ -34,7 +34,7 @@ function mkdir(path, option) {
 }
 
 function exec(command, options) {
-    childProcess.spawnSync(command, options, {stdio: 'inherit'})
+    spawn.sync(command, options, {stdio: 'inherit'})
 }
 
 function buildEgretThirdPackage(basePath, packageName) {
@@ -205,15 +205,13 @@ program.command('build')
             error('webpack.config.js: output.path not config');
             return;
         }
-        setTimeout(function () {
-            let src = webpackConfig.output.path + '/' + webpackConfig.output.filename;
-            fs.copyFileSync(src, process.cwd() + '/' + name + '/bin/' + name + '/' + name + '.js');
-            fs.copyFileSync(src, process.cwd() + '/' + name + '/bin/' + name + '/' + name + '.min.js');
+        let src = webpackConfig.output.path + '/' + webpackConfig.output.filename;
+        fs.copyFileSync(src, process.cwd() + '/' + name + '/bin/' + name + '/' + name + '.js');
+        fs.copyFileSync(src, process.cwd() + '/' + name + '/bin/' + name + '/' + name + '.min.js');
 
-            if (cmd.egretBuild) {
-                exec('egret', ['build']);
-            }
-        });
+        if (cmd.egretBuild) {
+            exec('egret', ['build']);
+        }
     });
 
 program.on('command:*', function () {
